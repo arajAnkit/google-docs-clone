@@ -25,6 +25,9 @@ import Link from "@tiptap/extension-link";
 
 import TextAlign from "@tiptap/extension-text-align";
 
+// Custom Extensions
+import { FontSizeExtension } from "@/extensions/font-size";
+
 import { useEditor, EditorContent } from "@tiptap/react";
 
 import { useEditorStore } from "@/store/use-editor-store";
@@ -93,6 +96,7 @@ export const Editor = () => {
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
+      FontSizeExtension
     ],
     content: `
         <table>
