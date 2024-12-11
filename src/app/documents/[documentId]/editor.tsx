@@ -27,6 +27,7 @@ import TextAlign from "@tiptap/extension-text-align";
 
 // Custom Extensions
 import { FontSizeExtension } from "@/extensions/font-size";
+import { LineHeightExtension } from "@/extensions/line-height";
 
 import { useEditor, EditorContent } from "@tiptap/react";
 
@@ -96,7 +97,11 @@ export const Editor = () => {
       TextAlign.configure({
         types: ["heading", "paragraph"],
       }),
-      FontSizeExtension
+      FontSizeExtension,
+      LineHeightExtension.configure({
+        types: ["paragraph", "heading"],
+        defaultLineHeight: "normal",
+      }),
     ],
     content: `
         <table>
