@@ -56,8 +56,10 @@ export const LineHeightExtension = Extension.create({
           });
 
           if (dispatch) {
+            dispatch(tr);
             return true;
           }
+          return false;
         },
 
       unsetLineHeight:
@@ -75,8 +77,11 @@ export const LineHeightExtension = Extension.create({
               });
             }
           });
-          if (dispatch) dispatch(tr);
-          return true;
+          if (dispatch) {
+            dispatch(tr);
+            return true;
+          }
+          return false;
         },
     };
   },
