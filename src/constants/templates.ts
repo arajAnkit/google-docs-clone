@@ -1,21 +1,21 @@
 export const templates = [
-  { id: "blank", lebel: "Blank Document", imageUrl: "/blank-document.svg" },
+  { id: "blank", label: "Blank Document", imageUrl: "/blank-document.svg" },
   {
     id: "software-proposal",
-    lebel: "Software development proposal",
+    label: "Software development proposal",
     imageUrl: "/software-proposal.svg",
   },
   {
     id: "project-proposal",
-    lebel: "Project proposal",
+    label: "Project proposal",
     imageUrl: "/project-proposal.svg",
   },
   {
     id: "business-letter",
-    lebel: "Business letter",
+    label: "Business letter",
     imageUrl: "/business-letter.svg",
   },
-  { id: "resume", lebel: "Resume", imageUrl: "/resume.svg" },
-  { id: "cover-letter", lebel: "Cover letter", imageUrl: "/cover-letter.svg" },
-  { id: "letter", lebel: "Letter", imageUrl: "/letter.svg" },
+  { id: "resume", label: "Resume", imageUrl: "/resume.svg" },
+  { id: "cover-letter", label: "Cover letter", imageUrl: "/cover-letter.svg" },
+  { id: "letter", label: "Letter", imageUrl: "/letter.svg" },
 ];
