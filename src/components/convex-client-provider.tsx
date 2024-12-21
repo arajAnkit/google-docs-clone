@@ -9,9 +9,9 @@ import {
   Authenticated,
   Unauthenticated,
 } from "convex/react";
+import { ColorfulRippleLoader } from "./colorful-ripple-loader";
 
-import { FullscreenLoader } from "./fullscreen-loader";
-
+// import { FullscreenLoader } from "./fullscreen-loader";
 const convex = new ConvexReactClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
 export function ConvexClientProvider({ children }: { children: ReactNode }) {
@@ -27,7 +27,8 @@ export function ConvexClientProvider({ children }: { children: ReactNode }) {
           </div>
         </Unauthenticated>
         <AuthLoading>
-          <FullscreenLoader label="Auth loading..." />
+          {/* <FullscreenLoader label="Auth loading..." /> */}
+          <ColorfulRippleLoader label="Auth loading..." />
         </AuthLoading>
       </ConvexProviderWithClerk>
     </ClerkProvider>
