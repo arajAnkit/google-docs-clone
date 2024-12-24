@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-
+import { toast } from "sonner";
 import {
   Dialog,
   DialogContent,
@@ -39,9 +39,11 @@ export const RenameDialog = ({
     e.preventDefault();
     setIsUpdating(true);
     update({ id: documentId, title: title.trim() || "Untitled" })
-      .then(() => setOpen(false))
+      .catch(() => toast.error("Something went wrong"))
+      .then(() => toast.success("Document updated sucessfully"))
       .finally(() => {
         setIsUpdating(false);
+        setOpen(false);
       });
   };
 
