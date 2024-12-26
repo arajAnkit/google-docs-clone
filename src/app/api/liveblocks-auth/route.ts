@@ -27,7 +27,7 @@ export async function POST(req: Request) {
   }
   const isOwner = document.ownerId === user.id;
   const isOrganizationMember = !!(
-    document.organizationId && document.initialContent === sessionClaims.org_id
+    document.organizationId && document.organizationId === sessionClaims.org_id
   );
 
   if (!isOwner && !isOrganizationMember) {
