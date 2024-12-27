@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 
 import { toast } from "sonner";
 
@@ -26,6 +27,7 @@ interface RemoveDialogProps {
 }
 
 export const RemoveDialog = ({ documentId, children }: RemoveDialogProps) => {
+  const router = useRouter();
   const remove = useMutation(api.documents.removeById);
   const [isRemoving, setIsRemoving] = useState(false);
 
@@ -50,8 +52,11 @@ export const RemoveDialog = ({ documentId, children }: RemoveDialogProps) => {
               e.stopPropagation();
               setIsRemoving(true);
               remove({ id: documentId })
+                .then(() => {
+                  toast.success("Document removed sucessfully");
+                  router.push("/");
+                })
                 .catch(() => toast.error("Something went wrong"))
-                .then(() => toast.success("Document removed sucessfully"))
                 .finally(() => setIsRemoving(false));
             }}
           >
