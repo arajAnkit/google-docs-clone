@@ -15,10 +15,12 @@ import { FullscreenLoader } from "@/components/fullscreen-loader";
 import { getDocuments, getUsers } from "./action";
 import { Id } from "../../../../convex/_generated/dataModel";
 
+import { LEFT_MARIGN_DEFAULT, RIGHT_MARIGN_DEFAULT } from "@/constants/margin";
+
 export function Room({ children }: { children: ReactNode }) {
   const params = useParams();
 
-  type User = { id: string; name: string; avatar: string };
+  type User = { id: string; name: string; avatar: string; color: string };
   const [users, setUsers] = useState<User[]>([]);
 
   const fetchUsers = useMemo(
@@ -71,7 +73,10 @@ export function Room({ children }: { children: ReactNode }) {
     >
       <RoomProvider
         id={params.documentId as string}
-        initialStorage={{ leftMargin: 56, rightMargin: 56 }}
+        initialStorage={{
+          leftMargin: LEFT_MARIGN_DEFAULT,
+          rightMargin: RIGHT_MARIGN_DEFAULT,
+        }}
       >
         <ClientSideSuspense
           fallback={<FullscreenLoader label="Room loading..." />}
